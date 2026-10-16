@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>portcve</AssemblyName>
+    <RootNamespace>PortCVE</RootNamespace>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == '' and $([MSBuild]::IsOSPlatform('Windows'))">win-x64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == '' and $([MSBuild]::IsOSPlatform('Linux'))">linux-x64</RuntimeIdentifier>
+    <RuntimeFrameworkVersion>10.0.10</RuntimeFrameworkVersion>
+    <PublishTrimmed>false</PublishTrimmed>
+    <Version>0.2.0-alpha.1</Version>
+    <Title>PortCVE</Title>
+    <Description>Inventory local Windows and Linux listeners and audit authorized remote TCP services with evidence-backed CVE correlation.</Description>
+    <Authors>Labeeb</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+</Project>

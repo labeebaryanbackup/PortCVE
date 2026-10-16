@@ -1,0 +1,35 @@
+name: Feature request
+description: Suggest a new workflow or improvement.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Describe the analyst or administrator task, not just the implementation you have in mind.
+    validations:
+      required: true
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Desired command and workflow
+      description: Include an example command, expected output, and automation exit behavior.
+      render: powershell
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Safety and privacy
+      description: Note any network activity, privileges, sensitive data, or destructive actions involved.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Existing tools or alternatives
+      description: Name any current tools and explain what PortCVE should do differently.
+    validations:
+      required: true
